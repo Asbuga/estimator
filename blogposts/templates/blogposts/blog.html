@@ -1,0 +1,23 @@
+{% extends 'blogposts/base.html' %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block content %}
+  <div class="card mx-2">
+    {% for post in posts %}
+      <div class="card-header">
+        <h3>{{ post.title }}</h3>
+        <p><u><i>{{ post.date_added|date:'d-m-Y, H:i' }}</i></u></p>
+        {% if user.is_authenticated  %}
+          Edit - 
+          Delite
+        {% endif %}
+      </div>
+      <p class="card-body">{{ post.body }}</p>
+    {% empty %}
+      <p>Post isn`t defined.</p>
+    {% endfor %}
+  </div>
+{% endblock %}

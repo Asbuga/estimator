@@ -1,0 +1,59 @@
+{% load django_bootstrap5 %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <div class="col-sm-12">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light mx-auto">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand ms-4" href="#">Estimator</a>
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      
+      
+      <div class="pt-4">
+        {% block header %}{% endblock %}
+      </div>
+
+
+      <div>
+          {% block content %}{% endblock %}
+      </div>
+
+
+      <div class="d-flex flex-column min-vh-100">
+        <div class="flex-fill">
+          <footer class="bg-light text-center py-3 mt-auto fixed-bottom">
+                © 2025 Copyright:
+                <a class="text-reset fw-bold" href="">bugandreij@gmail.com</a>
+              </div>
+            </footer>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
